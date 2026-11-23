@@ -330,7 +330,11 @@
         }
 
         .hero-top-content {
+            width: 100%;
+            max-width: 960px;
             margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-logo-box {
@@ -339,19 +343,28 @@
 
         .hero-tagline-clean {
             font-family: 'Prompt', sans-serif;
-            font-size: 1.75rem;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            text-wrap: balance;
+            font-size: clamp(1.25rem, 2.15vw, 1.65rem);
             color: #1a1a1a;
             font-weight: 600;
-            line-height: 1.5;
-            margin: 0;
-            max-width: 960px;
+            line-height: 1.45;
             text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 15px rgba(255, 255, 255, 0.9);
         }
 
+        .hero-tagline-mobile-space {
+            display: none;
+        }
+
         .hero-products-bottom {
-            width: 94vw;
-            max-width: 1540px;
-            margin: 20px auto 0;
+            width: min(98vw, 1640px);
+            max-width: 1640px;
+            flex: 0 0 auto;
+            align-self: center;
+            margin: 20px 0 0;
             display: block;
         }
 
@@ -361,6 +374,16 @@
             display: block;
             margin: auto;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+        }
+
+        @media (max-width: 767px) {
+            .hero-tagline-break {
+                display: none;
+            }
+
+            .hero-tagline-mobile-space {
+                display: inline;
+            }
         }
 
         /* Section Titles */
@@ -752,7 +775,7 @@
         .about-carousel-box img {
             border-radius: 12px;
             width: 100%;
-            height: 390px;
+            height: 450px;
             object-fit: cover;
             box-shadow: 0 8px 18px rgba(0,0,0,0.08);
         }
@@ -771,10 +794,16 @@
         }
 
         .about-text-content p {
-            font-size: 1.15rem;
-            line-height: 1.8;
+            font-size: clamp(17px, 1.3vw, 18.5px);
+            line-height: 1.65;
             color: #333;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 991px) {
+            .about-carousel-box img {
+                height: 390px;
+            }
         }
 
         /* Footer & Contact Section (Page 8) */
@@ -1094,7 +1123,7 @@
                 </div>
 
                 <h1 class="hero-tagline-clean" data-i18n="hero_tagline">
-                    จำหน่ายเครื่องเขียน วัสดุสำนักงาน อุปกรณ์ทำความสะอาด งานบ้านงานครัว และรับเทรดดิ้งสินค้าทุกประเภท
+                    จำหน่ายเครื่องเขียน วัสดุสำนักงาน อุปกรณ์ทำความสะอาด<span class="hero-tagline-mobile-space"> </span><br class="hero-tagline-break">งานบ้านงานครัว และรับเทรดดิ้งสินค้าทุกประเภท
                 </h1>
             </div>
 
@@ -1110,7 +1139,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <!-- Left: 4-image Carousel (จาก Google Drive) -->
-                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                <div class="col-lg-7 col-12 mb-4 mb-lg-0">
                     <div class="about-carousel-box" id="about-slider">
                         <div><img src="img/aboutus/slide1.jpg" alt="About NAFF 1"></div>
                         <div><img src="img/aboutus/slide2.jpg" alt="About NAFF 2"></div>
@@ -1120,7 +1149,7 @@
                 </div>
 
                 <!-- Right: Text Content -->
-                <div class="col-lg-6 col-12 about-text-content">
+                <div class="col-lg-5 col-12 about-text-content">
                     <h2><span data-i18n="about_title_span">รู้</span><span data-i18n="about_title_rest">จักเรา</span></h2>
                     <p data-i18n="about_p1">
                         บริษัท นาฟ จำกัด ก่อตั้งขึ้นเมื่อวันที่ 10 สิงหาคม 2543 (เดิมชื่อ บริษัท นาฟ สเตชั่นเนอรี่ จำกัด) ดำเนินธุรกิจด้านการจัดหาและจำหน่ายวัสดุสำนักงานทุกประเภท (Office Supplies Trader Company) สำหรับโรงงานอุตสาหกรรม บริษัทเอกชนทั่วไป และหน่วยงานราชการต่างๆ อีกทั้งให้บริการทางออนไลน์บนแพลตฟอร์มชั้นนำ เพื่อให้บริการและตอบสนองความต้องการของลูกค้าอย่างครบวงจร
@@ -1301,7 +1330,7 @@
             <div class="row justify-content-center g-4">
                 <!-- Shopee -->
                 <div class="col-lg-4 col-md-6 col-11">
-                    <a target="_blank" href="https://shope.ee/LGI3m3Jdy" class="store-pill-btn">
+                    <a target="_blank" rel="noopener noreferrer" href="https://shopee.co.th/naffstationery" class="store-pill-btn">
                         <div class="store-icon-circle icon-shopee">
                             <i class="fas fa-shopping-bag"></i>
                         </div>
@@ -1487,7 +1516,7 @@
             nav_store: "Online Store",
             nav_branch: "Branches",
             nav_contact: "Contact",
-            hero_tagline: "Stationery, office supplies, cleaning products, household and kitchen goods, and general trading.",
+            hero_tagline: "Stationery, office supplies, and cleaning products<span class=\"hero-tagline-mobile-space\"> </span><br class=\"hero-tagline-break\">for home, kitchen, and general trading.",
             about_title_span: "About ",
             about_title_rest: "Us",
             about_p1: "Naff Co., Ltd. was established on 10 August 2000 (formerly Naff Stationery Co., Ltd.). We supply a wide range of office products to factories, private companies, and government agencies, and serve customers through leading online platforms.",
