@@ -398,6 +398,29 @@
             margin: 0;
         }
 
+        .section-header-title .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 13px;
+            margin-bottom: 10px;
+            border-radius: 999px;
+            background: rgba(249, 160, 27, 0.1);
+            color: var(--primary-orange);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        #products .section-header-title h2::after {
+            content: "";
+            display: block;
+            width: 44px;
+            height: 4px;
+            margin: 12px auto 0;
+            border-radius: 4px;
+            background: var(--primary-orange);
+        }
+
         .section-header-title h2 span.orange {
             color: var(--primary-orange);
         }
@@ -406,6 +429,14 @@
             color: #666;
             font-size: 1rem;
             margin-top: 6px;
+        }
+
+        .products-section {
+            padding: 70px 0 50px;
+            background:
+                radial-gradient(ellipse at 8% 20%, rgba(249, 160, 27, 0.055), transparent 280px),
+                radial-gradient(ellipse at 92% 70%, rgba(63, 115, 185, 0.045), transparent 320px),
+                #fbfbfb;
         }
 
         #products .container,
@@ -428,6 +459,7 @@
         }
 
         .category-card {
+            position: relative;
             background: #ffffff;
             border: 1px solid #ebebeb;
             border-radius: 16px;
@@ -445,10 +477,82 @@
             justify-content: flex-start;
         }
 
+        @supports (background: color-mix(in srgb, red, white)) {
+            .category-card {
+                background: linear-gradient(
+                    145deg,
+                    color-mix(in srgb, var(--category-color) 8%, #fff),
+                    #fff 76%
+                );
+            }
+
+        }
+
         .category-card:hover, .category-card.active {
             transform: translateY(-4px);
             box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-            border-color: #ddd;
+            border-color: var(--category-color, #ddd);
+        }
+
+        @supports (background: color-mix(in srgb, red, white)) {
+            .category-card:hover,
+            .category-card.active {
+                box-shadow: 0 12px 26px color-mix(in srgb, var(--category-color) 18%, transparent);
+            }
+        }
+
+        .category-card::after {
+            content: "→";
+            position: absolute;
+            right: 14px;
+            bottom: 10px;
+            color: var(--category-color, var(--primary-orange));
+            font-size: 21px;
+            line-height: 1;
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .category-card:hover::after,
+        .category-card:focus-visible::after,
+        .category-card.active::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .category-card:focus-visible {
+            outline: 3px solid var(--category-color, var(--primary-orange));
+            outline-offset: 3px;
+        }
+
+        body.scroll-reveal-ready #products .scroll-reveal {
+            opacity: 0;
+        }
+
+        body.scroll-reveal-ready #products .scroll-reveal.is-visible {
+            animation: product-scroll-reveal 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes product-scroll-reveal {
+            from { opacity: 0; translate: var(--reveal-x, 0) var(--reveal-y, 0); }
+            to { opacity: 1; translate: 0 0; }
+        }
+
+        #cat-icon-container .category-card:nth-child(1) { --reveal-x: -90px; --reveal-y: -50px; animation-delay: 0.05s; }
+        #cat-icon-container .category-card:nth-child(2) { --reveal-x: 20px; --reveal-y: -90px; animation-delay: 0.17s; }
+        #cat-icon-container .category-card:nth-child(3) { --reveal-x: -70px; --reveal-y: 60px; animation-delay: 0.29s; }
+        #cat-icon-container .category-card:nth-child(4) { --reveal-x: 0px; --reveal-y: 90px; animation-delay: 0.41s; }
+        #cat-icon-container .category-card:nth-child(5) { --reveal-x: 70px; --reveal-y: 60px; animation-delay: 0.53s; }
+        #cat-icon-container .category-card:nth-child(6) { --reveal-x: -20px; --reveal-y: -90px; animation-delay: 0.65s; }
+        #cat-icon-container .category-card:nth-child(7) { --reveal-x: 90px; --reveal-y: -50px; animation-delay: 0.77s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            body.scroll-reveal-ready #products .scroll-reveal {
+                opacity: 1;
+                animation: none;
+                translate: none;
+            }
         }
 
         .cat-circle-icon {
@@ -767,26 +871,104 @@
 
         /* About Us Carousel (Page 6) */
         .about-section-wrapper {
-            background-color: #F8E4C5;
-            padding: 55px 0;
+            background:
+                radial-gradient(ellipse at 18% 0%, rgba(255, 255, 255, 0.52), transparent 36%),
+                radial-gradient(ellipse at 96% 88%, rgba(249, 160, 27, 0.12), transparent 30%),
+                linear-gradient(135deg, #F8E4C5 0%, #FAEBD5 52%, #F6E2C3 100%);
+            padding: clamp(56px, 6vw, 88px) 0;
             position: relative;
+            overflow: hidden;
+        }
+
+        .about-section-wrapper::before,
+        .about-section-wrapper::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .about-section-wrapper::before {
+            top: -230px;
+            left: -190px;
+            width: 460px;
+            height: 460px;
+            border: 1px solid rgba(249, 160, 27, 0.16);
+            box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.14), 0 0 0 64px rgba(249, 160, 27, 0.05);
+        }
+
+        .about-section-wrapper::after {
+            right: -200px;
+            bottom: -270px;
+            width: 540px;
+            height: 540px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.28), rgba(249, 160, 27, 0.1) 45%, transparent 72%);
+        }
+
+        .about-section-wrapper .container {
+            position: relative;
+            z-index: 1;
         }
 
         .about-carousel-box img {
             border-radius: 12px;
             width: 100%;
-            height: 450px;
+            height: clamp(460px, 30vw, 480px);
             object-fit: cover;
             box-shadow: 0 8px 18px rgba(0,0,0,0.08);
         }
 
+        .about-carousel-box .slick-prev,
+        .about-carousel-box .slick-next {
+            z-index: 2;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .about-carousel-box .slick-prev {
+            left: 16px;
+        }
+
+        .about-carousel-box .slick-next {
+            right: 16px;
+        }
+
+        .about-carousel-box .slick-prev:before,
+        .about-carousel-box .slick-next:before {
+            color: var(--primary-orange);
+            font-size: 24px;
+            opacity: 1;
+        }
+
+        .about-carousel-box .slick-prev:hover,
+        .about-carousel-box .slick-next:hover {
+            background: var(--primary-orange);
+        }
+
+        .about-carousel-box .slick-prev:hover:before,
+        .about-carousel-box .slick-next:hover:before {
+            color: #fff;
+        }
+
+        .about-carousel-box .slick-prev:focus-visible,
+        .about-carousel-box .slick-next:focus-visible {
+            outline: 3px solid var(--primary-orange);
+            outline-offset: 3px;
+        }
+
         .about-text-content {
-            padding-left: 15px;
+            padding-left: 0;
+            max-width: 560px;
+            margin-left: auto;
         }
 
         .about-text-content h2 {
-            font-size: 3.6rem;
-            margin-bottom: 16px;
+            font-size: clamp(2.2rem, 2.7vw, 2.8rem);
+            line-height: 1.1;
+            margin-bottom: 10px;
         }
 
         .about-text-content h2 span {
@@ -794,16 +976,34 @@
         }
 
         .about-text-content p {
-            font-size: clamp(17px, 1.3vw, 18.5px);
-            line-height: 1.65;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 15.5px;
+            line-height: 1.5;
+            color: #3f3b35;
+            margin-bottom: 7px;
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: 1199px) {
             .about-carousel-box img {
-                height: 390px;
+                height: 360px;
             }
+
+            .about-text-content {
+                max-width: none;
+                margin-left: 0;
+            }
+
+            .about-text-content p {
+                font-size: 16px;
+                line-height: 1.65;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .about-carousel-box img {
+                height: 270px;
+            }
+
         }
 
         /* Footer & Contact Section (Page 8) */
@@ -1135,11 +1335,11 @@
     </section>
 
     <!-- SECTION: ABOUT US / รู้จักเรา (ย้ายมาไว้ก่อน สินค้าของเรา ตามคำขอ พร้อมรูปจากไดรฟ์) -->
-    <section id="aboutus" class="about-section-wrapper" style="background-color: #F8E4C5; padding: 60px 0;">
+    <section id="aboutus" class="about-section-wrapper">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-start about-layout">
                 <!-- Left: 4-image Carousel (จาก Google Drive) -->
-                <div class="col-lg-7 col-12 mb-4 mb-lg-0">
+                <div class="col-12 col-xl-7 mb-4 mb-xl-0">
                     <div class="about-carousel-box" id="about-slider">
                         <div><img src="img/aboutus/slide1.jpg" alt="About NAFF 1"></div>
                         <div><img src="img/aboutus/slide2.jpg" alt="About NAFF 2"></div>
@@ -1149,7 +1349,7 @@
                 </div>
 
                 <!-- Right: Text Content -->
-                <div class="col-lg-5 col-12 about-text-content">
+                <div class="col-12 col-xl-5 about-text-content">
                     <h2><span data-i18n="about_title_span">รู้</span><span data-i18n="about_title_rest">จักเรา</span></h2>
                     <p data-i18n="about_p1">
                         บริษัท นาฟ จำกัด ก่อตั้งขึ้นเมื่อวันที่ 10 สิงหาคม 2543 (เดิมชื่อ บริษัท นาฟ สเตชั่นเนอรี่ จำกัด) ดำเนินธุรกิจด้านการจัดหาและจำหน่ายวัสดุสำนักงานทุกประเภท (Office Supplies Trader Company) สำหรับโรงงานอุตสาหกรรม บริษัทเอกชนทั่วไป และหน่วยงานราชการต่างๆ อีกทั้งให้บริการทางออนไลน์บนแพลตฟอร์มชั้นนำ เพื่อให้บริการและตอบสนองความต้องการของลูกค้าอย่างครบวงจร
@@ -1172,9 +1372,10 @@
     </section>
 
     <!-- SECTION: PRODUCTS / สินค้าของเรา (Slide 2 & 3) -->
-    <section id="products" style="padding: 70px 0 50px; background-color: #fbfbfb;">
+    <section id="products" class="products-section">
         <div class="container">
-            <div class="section-header-title">
+            <div class="section-header-title scroll-reveal">
+                <span class="section-eyebrow" data-i18n="prod_eyebrow">เลือกจาก 7 หมวดหมู่</span>
                 <h2><span class="orange" data-i18n="prod_head_span">สินค้า</span><span data-i18n="prod_head_rest">ของเรา</span></h2>
                 <p data-i18n="prod_head_sub">เลือกหมวดหมู่สินค้าที่ต้องการค้นหาได้ทันที</p>
             </div>
@@ -1182,7 +1383,7 @@
             <!-- 7 Category Circle Icons (Slide 2) -->
             <div class="category-icons-grid" id="cat-icon-container">
                 <!-- 1: เครื่องเขียนและอุปกรณ์ศิลปะ (#3f73b9) -->
-                <a href="#product-showcase" class="category-card" onclick="selectCategory(1)">
+                <a href="#product-showcase" class="category-card scroll-reveal" style="--category-color: var(--cat-art);" onclick="selectCategory(1)">
                     <div class="cat-circle-icon" style="background-color: var(--cat-art);">
                         <i class="fas fa-palette"></i>
                     </div>
@@ -1190,7 +1391,7 @@
                 </a>
 
                 <!-- 2: อุปกรณ์สำนักงาน (#35b34b) -->
-                <a href="#product-showcase" class="category-card" onclick="selectCategory(2)">
+                <a href="#product-showcase" class="category-card scroll-reveal" style="--category-color: var(--cat-office);" onclick="selectCategory(2)">
                     <div class="cat-circle-icon" style="background-color: var(--cat-office);">
                         <i class="fas fa-paperclip"></i>
                     </div>
@@ -1198,7 +1399,7 @@
                 </a>
 
                 <!-- 3: กระดาษ (#ec3034) -->
-                <a href="#product-showcase" class="category-card" onclick="selectCategory(3)">
+                <a href="#product-showcase" class="category-card scroll-reveal" style="--category-color: var(--cat-paper);" onclick="selectCategory(3)">
                     <div class="cat-circle-icon" style="background-color: var(--cat-paper);">
                         <i class="fas fa-copy"></i>
                     </div>
@@ -1206,7 +1407,7 @@
                 </a>
 
                 <!-- 4: แฟ้มและอุปกรณ์จัดเก็บเอกสาร (#ef5295) -->
-                <a href="#product-showcase" class="category-card" onclick="selectCategory(4)">
+                <a href="#product-showcase" class="category-card scroll-reveal" style="--category-color: var(--cat-filing);" onclick="selectCategory(4)">
                     <div class="cat-circle-icon" style="background-color: var(--cat-filing);">
                         <i class="fas fa-folder-open"></i>
                     </div>
@@ -1214,7 +1415,7 @@
                 </a>
 
                 <!-- 5: ผลิตภัณฑ์ทำความสะอาด (#fac218) -->
-                <a href="#product-showcase" class="category-card" onclick="selectCategory(5)">
+                <a href="#product-showcase" class="category-card scroll-reveal" style="--category-color: var(--cat-cleaning);" onclick="selectCategory(5)">
                     <div class="cat-circle-icon" style="background-color: var(--cat-cleaning);">
                         <i class="fas fa-spray-can"></i>
                     </div>
@@ -1222,7 +1423,7 @@
                 </a>
 
                 <!-- 6: เครื่องใช้ไฟฟ้าสำนักงาน (#19b2e4) -->
-                <a href="#product-showcase" class="category-card" onclick="selectCategory(6)">
+                <a href="#product-showcase" class="category-card scroll-reveal" style="--category-color: var(--cat-electrical);" onclick="selectCategory(6)">
                     <div class="cat-circle-icon" style="background-color: var(--cat-electrical);">
                         <i class="fas fa-calculator"></i>
                     </div>
@@ -1230,7 +1431,7 @@
                 </a>
 
                 <!-- 7: สินค้าอื่นๆ (#cf1e7b) -->
-                <a href="#product-showcase" class="category-card" onclick="selectCategory(7)">
+                <a href="#product-showcase" class="category-card scroll-reveal" style="--category-color: var(--cat-other);" onclick="selectCategory(7)">
                     <div class="cat-circle-icon" style="background-color: var(--cat-other);">
                         <i class="fas fa-box-open"></i>
                     </div>
@@ -1527,6 +1728,7 @@
             prod_head_span: "Our ",
             prod_head_rest: "Products",
             prod_head_sub: "Choose a product category to start browsing.",
+            prod_eyebrow: "7 PRODUCT CATEGORIES",
             cat_1: "Stationery<br> & Art Supplies",
             cat_2: "Office Supplies",
             cat_3: "Paper",
@@ -1930,13 +2132,39 @@
             }, 100);
         }
 
+        function initProductScrollReveal() {
+            if (!('IntersectionObserver' in window) ||
+                (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+                return;
+            }
+
+            const targets = document.querySelectorAll('#products .scroll-reveal');
+            if (!targets.length) {
+                return;
+            }
+
+            document.body.classList.add('scroll-reveal-ready');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            targets.forEach(target => observer.observe(target));
+        }
+
         // Initialize Carousel & Default Products
         $(document).ready(function(){
             renderProducts(1);
+            initProductScrollReveal();
 
             $('#about-slider').slick({
                 dots: true,
-                arrows: false,
+                arrows: true,
                 autoplay: true,
                 autoplaySpeed: 3000,
                 slidesToShow: 1,
