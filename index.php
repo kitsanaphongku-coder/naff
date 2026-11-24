@@ -856,17 +856,48 @@
         .icon-lazada { background: #0F146D; }
         .icon-tiktok { background: #000000; }
 
-        .store-clips-decor {
+        .store-platform-layout {
+            align-items: center;
+        }
+
+        .store-artwork-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             position: absolute;
-            right: 5%;
-            top: 20px;
-            width: 120px;
+            left: 0;
+            top: 50%;
+            width: min(19vw, 350px);
+            padding: 0;
+            transform: translateY(-50%);
+        }
+
+        .store-artwork {
+            display: block;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 16px rgba(70, 50, 25, 0.12));
             pointer-events: none;
-            z-index: 5;
+        }
+
+        @media (max-width: 1599px) {
+            .store-artwork-wrap {
+                position: static;
+                justify-content: center;
+                width: 100%;
+                margin-top: 20px;
+                transform: none;
+            }
+
+            .store-artwork {
+                width: min(320px, 32vw);
+            }
         }
 
         @media (max-width: 991px) {
-            .store-clips-decor { display: none; }
+            .store-artwork {
+                width: min(260px, 65vw);
+            }
         }
 
         /* About Us Carousel (Page 6) */
@@ -1129,7 +1160,7 @@
 
         .branch-section {
             padding: 75px 0;
-            background: #fffaf3 url('img/bg/2.png') center / cover no-repeat;
+            background: #fffaf3;
         }
 
         .branch-carousel {
@@ -1476,44 +1507,44 @@
             <div class="product-grid">
                 <!-- 10 Best Seller Items with pastel gradient cards -->
                 <div class="bestseller-card">
-                    <img src="img/product/cat1/1.png" alt="Best Seller 1">
-                    <div class="product-badge" data-i18n="best_item_1">ปากกาหมึกเจลคุณภาพสูง</div>
+                    <img src="img/product/cat1/n1.png" alt="ดินสอเขียนวัสดุ Mitsubishi 7600">
+                    <div class="product-badge" data-i18n="best_item_1">ดินสอเขียนวัสดุ Mitsubishi 7600</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat1/n1.png" alt="Best Seller 2">
-                    <div class="product-badge" data-i18n="best_item_2">ชุดดินสอกดและยางลบ</div>
+                    <img src="img/product/cat1/3.png" alt="กระดาษถ่ายเอกสาร Double A">
+                    <div class="product-badge" data-i18n="best_item_2">กระดาษถ่ายเอกสาร Double A</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat2/n1.png" alt="Best Seller 3">
-                    <div class="product-badge" data-i18n="best_item_3">เครื่องเย็บกระดาษ Heavy Duty</div>
+                    <img src="img/product/cat1/n3.png" alt="เครื่องทำลายเอกสาร">
+                    <div class="product-badge" data-i18n="best_item_3">เครื่องทำลายเอกสาร</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat3/1.png" alt="Best Seller 4">
-                    <div class="product-badge" data-i18n="best_item_4">กระดาษถ่ายเอกสาร A4 80 แกรม</div>
+                    <img src="img/product/cat2/2.png" alt="ถังขยะคัดแยกสี">
+                    <div class="product-badge" data-i18n="best_item_4">ถังขยะคัดแยกสี</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat4/1.png" alt="Best Seller 5">
-                    <div class="product-badge" data-i18n="best_item_5">แฟ้มตราช้างก้านยก 3 นิ้ว</div>
+                    <img src="img/product/cat1/1.png" alt="แฟ้มเอกสารก้านยกคละสี">
+                    <div class="product-badge" data-i18n="best_item_5">แฟ้มเอกสารก้านยกคละสี</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat5/1.png" alt="Best Seller 6">
-                    <div class="product-badge" data-i18n="best_item_6">น้ำยาทำความสะอาดอเนกประสงค์</div>
+                    <img src="img/product/cat2/8.png" alt="น้ำยาทำความสะอาดพื้น 3M">
+                    <div class="product-badge" data-i18n="best_item_6">น้ำยาทำความสะอาดพื้น 3M</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat6/1.png" alt="Best Seller 7">
-                    <div class="product-badge" data-i18n="best_item_7">เครื่องทำลายเอกสารสำนักงาน</div>
+                    <img src="img/product/cat3/1.png" alt="เครื่องพิมพ์อิงค์เจ็ต">
+                    <div class="product-badge" data-i18n="best_item_7">เครื่องพิมพ์อิงค์เจ็ต</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat7/1.png" alt="Best Seller 8">
-                    <div class="product-badge" data-i18n="best_item_8">เทปใสกาวเหนียวพิเศษ</div>
+                    <img src="img/product/cat4/1.png" alt="ฟิล์มยืดพันพาเลท">
+                    <div class="product-badge" data-i18n="best_item_8">ฟิล์มยืดพันพาเลท</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat2/2.png" alt="Best Seller 9">
-                    <div class="product-badge" data-i18n="best_item_9">กรรไกรสเตนเลสแท้</div>
+                    <img src="img/product/cat7/3.png" alt="ลูกบาสเกตบอล Spalding">
+                    <div class="product-badge" data-i18n="best_item_9">ลูกบาสเกตบอล Spalding</div>
                 </div>
                 <div class="bestseller-card">
-                    <img src="img/product/cat1/3.png" alt="Best Seller 10">
-                    <div class="product-badge" data-i18n="best_item_10">ชุดปากกาเน้นข้อความหลากสี</div>
+                    <img src="img/product/cat5/4.png" alt="หม้อหุงข้าวไฟฟ้า">
+                    <div class="product-badge" data-i18n="best_item_10">หม้อหุงข้าวไฟฟ้า</div>
                 </div>
             </div>
         </div>
@@ -1521,51 +1552,58 @@
 
     <!-- SECTION: ONLINE STORE / ร้านค้าออนไลน์ (Slide 5: Shopee, Lazada, TikTok) -->
     <section id="onlinestore" class="store-platform-container" style="background-color: #fbfbfb; padding: 60px 0;">
-        <img class="store-clips-decor" src="img/bg/1.png" alt="Clips decor">
         <div class="container">
             <div class="section-header-title">
                 <h2><span class="orange" data-i18n="store_head_span">ร้านค้า</span><span data-i18n="store_head_rest">ออนไลน์</span></h2>
                 <p data-i18n="store_head_sub">ช่องทางการจัดจำหน่ายบนแพลตฟอร์มออนไลน์ของเรา</p>
             </div>
 
-            <div class="row justify-content-center g-4">
-                <!-- Shopee -->
-                <div class="col-lg-4 col-md-6 col-11">
-                    <a target="_blank" rel="noopener noreferrer" href="https://shopee.co.th/naffstationery" class="store-pill-btn">
-                        <div class="store-icon-circle icon-shopee">
-                            <i class="fas fa-shopping-bag"></i>
+            <div class="row store-platform-layout">
+                <div class="col-12 store-platform-links">
+                    <div class="row justify-content-center g-4">
+                        <!-- Shopee -->
+                        <div class="col-lg-4 col-md-6 col-11">
+                            <a target="_blank" rel="noopener noreferrer" href="https://shopee.co.th/naffstationery" class="store-pill-btn">
+                                <div class="store-icon-circle icon-shopee">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 13px; color: #888;" data-i18n="store_shopee">Shopee Official</div>
+                                    <div>Naffstationery</div>
+                                </div>
+                            </a>
                         </div>
-                        <div>
-                            <div style="font-size: 13px; color: #888;" data-i18n="store_shopee">Shopee Official</div>
-                            <div>Naffstationery</div>
+
+                        <!-- Lazada -->
+                        <div class="col-lg-4 col-md-6 col-11">
+                            <a target="_blank" href="https://s.lazada.co.th/s.RDUdS" class="store-pill-btn">
+                                <div class="store-icon-circle icon-lazada">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 13px; color: #888;" data-i18n="store_lazada">Lazada Official</div>
+                                    <div data-i18n="store_lazada_name">นาฟ สเตชั่นเนอรี่</div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+
+                        <!-- TikTok (Added as per Slide 5) -->
+                        <div class="col-lg-4 col-md-6 col-11">
+                            <a target="_blank" href="https://www.tiktok.com/@naff.tiktok" class="store-pill-btn">
+                                <div class="store-icon-circle icon-tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 13px; color: #888;" data-i18n="store_tiktok">TikTok Shop</div>
+                                    <div>Naffstationery</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Lazada -->
-                <div class="col-lg-4 col-md-6 col-11">
-                    <a target="_blank" href="https://s.lazada.co.th/s.RDUdS" class="store-pill-btn">
-                        <div class="store-icon-circle icon-lazada">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div>
-                            <div style="font-size: 13px; color: #888;" data-i18n="store_lazada">Lazada Official</div>
-                            <div data-i18n="store_lazada_name">นาฟ สเตชั่นเนอรี่</div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- TikTok (Added as per Slide 5) -->
-                <div class="col-lg-4 col-md-6 col-11">
-                    <a target="_blank" href="https://www.tiktok.com/@naff.tiktok" class="store-pill-btn">
-                        <div class="store-icon-circle icon-tiktok">
-                            <i class="fab fa-tiktok"></i>
-                        </div>
-                        <div>
-                            <div style="font-size: 13px; color: #888;" data-i18n="store_tiktok">TikTok Shop</div>
-                            <div>Naffstationery</div>
-                        </div>
-                    </a>
+                <div class="col-12 store-artwork-wrap">
+                    <img class="store-artwork" src="img/bg/2.png" alt="" aria-hidden="true">
                 </div>
             </div>
         </div>
@@ -1747,16 +1785,16 @@
             best_head_span: "Best ",
             best_head_rest: "Sellers",
             best_head_sub: "Popular products chosen by business and office customers.",
-            best_item_1: "Premium gel pen",
-            best_item_2: "Mechanical pencil and eraser set",
-            best_item_3: "Heavy-duty stapler",
-            best_item_4: "A4 80 gsm copy paper",
-            best_item_5: "Elephant 3-inch lever arch file",
-            best_item_6: "All-purpose cleaner",
-            best_item_7: "Office paper shredder",
-            best_item_8: "Strong-adhesive clear tape",
-            best_item_9: "Stainless steel scissors",
-            best_item_10: "Multicolor highlighter set",
+            best_item_1: "Mitsubishi 7600 Marking Pencils",
+            best_item_2: "Double A Copy Paper",
+            best_item_3: "Paper Shredder",
+            best_item_4: "Color-Coded Sorting Bins",
+            best_item_5: "Assorted Lever Arch Files",
+            best_item_6: "3M Floor Cleaner",
+            best_item_7: "Inkjet Printer",
+            best_item_8: "Pallet Stretch Film",
+            best_item_9: "Spalding Basketball",
+            best_item_10: "Electric Rice Cooker",
             store_head_span: "Online ",
             store_head_rest: "Store",
             store_head_sub: "Shop with us on our online platforms.",
@@ -1802,79 +1840,6 @@
                 phone_main_2: "Call 044-256-375",
                 phone_sales: "Call 086-469-5163"
             }
-        };
-
-        const productTitlesEnglish = {
-            "ปากกาเจล Sarasa Clip": "Sarasa Clip Gel Pen",
-            "ปากกาลูกลื่น Lancer Spiral": "Lancer Spiral Ballpoint Pen",
-            "ชุดสีไม้คลีนเลอร์ 24 สี": "Clean Color 24-Color Pencil Set",
-            "ยางลบดินสอ Pentel Ain": "Pentel Ain Eraser",
-            "ดินสอกด Rotring Tikky": "Rotring Tikky Mechanical Pencil",
-            "ปากกาเคมี 2 หัว Horse": "Horse Twin-Tip Marker",
-            "ปากกาไวท์บอร์ด Pilot": "Pilot Whiteboard Marker",
-            "ชุดพู่กันสีน้ำสง่ามยุระ": "Sangmayura Watercolor Brush Set",
-            "เทปลบคำผิด PLUS Whiper": "PLUS Whiper Correction Tape",
-            "ไฮไลท์ Stabilo Boss Pastel": "Stabilo BOSS Pastel Highlighter",
-            "ที่เย็บกระดาษ MAX HD-10": "MAX HD-10 Stapler",
-            "กรรไกรตราช้าง 8 นิ้ว": "Elephant 8-Inch Scissors",
-            "แท่นตัดเทปตราช้าง": "Elephant Tape Dispenser",
-            "คัตเตอร์ Olfa Heavy Duty": "OLFA Heavy-Duty Cutter",
-            "ลวดเย็บกระดาษ MAX No.10": "MAX No. 10 Staples",
-            "คลิปหนีบกระดาษดำ Robin": "Robin Black Binder Clips",
-            "กาวตราช้าง Elephant Stick": "Elephant Glue Stick",
-            "ตรายางหมึกในตัว Shiny": "Shiny Self-Inking Stamp",
-            "เครื่องเจาะกระดาษ 2 รู": "2-Hole Paper Punch",
-            "ไม้บรรทัดเหล็ก 30 ซม.": "30 cm Steel Ruler",
-            "กระดาษ Double A 80 แกรม A4": "Double A A4 Copy Paper, 80 gsm",
-            "กระดาษ IDEA Work A4 80g": "IDEA Work A4 Paper, 80 gsm",
-            "กระดาษถ่ายเอกสารการ์ดสี": "Colored Cardstock",
-            "กระดาษต่อเนื่อง 9x11 นิ้ว": "9 x 11 in Continuous Paper",
-            "กระดาษโฟโต้กันน้ำมันวาว": "Waterproof Glossy Photo Paper",
-            "กระดาษคาร์บอนดำ Horse": "Horse Black Carbon Paper",
-            "กระดาษสติกเกอร์ขาวด้าน": "Matte White Sticker Paper",
-            "กระดาษความร้อนใบเสร็จ 80mm": "80 mm Thermal Receipt Paper",
-            "กระดาษเขียนแบบ A3": "A3 Drafting Paper",
-            "สมุดบันทึกริมลวดมีเส้น": "Wirebound Ruled Notebook",
-            "แฟ้มตราช้าง 120A4 ก้านยก": "Elephant A4 Lever Arch File",
-            "แฟ้มห่วง 2 ห่วง Robin": "Robin 2-Ring Binder",
-            "แฟ้มซองพลาสติกใส A4": "A4 Clear Plastic Document Folder",
-            "ไส้แฟ้มถนอมเอกสาร 11 รู": "11-Hole Sheet Protectors",
-            "กล่องใส่เอกสารกระดาษลูกฟูก": "Corrugated Document Storage Box",
-            "แฟ้มแขวน ตราช้าง 924": "Elephant 924 Hanging File",
-            "แฟ้มคลิปสปริงสำหรับเสนองาน": "Spring-Clip Presentation Folder",
-            "ตู้เอกสารพลาสติก 5 ชั้น": "5-Tier Plastic Storage Cabinet",
-            "กระเป๋าใส่เอกสารขยายข้าง": "Expandable Document Bag",
-            "คลิปบอร์ดไม้สำหรับตรวจงาน": "Wooden Inspection Clipboard",
-            "น้ำยาทำความสะอาดพื้น Magiclean": "Magiclean Floor Cleaner",
-            "สบู่เหลวล้างมือฆ่าเชื้อแบคทีเรีย": "Antibacterial Liquid Hand Soap",
-            "กระดาษทิชชู่ม้วนจัมโบ้ JRT": "Jumbo JRT Tissue Roll",
-            "ถุงขยะดำเหนียวพิเศษ ขนาด 30x40": "Heavy-Duty Black Garbage Bags, 30 x 40",
-            "สเปรย์แอลกอฮอล์ทำความสะอาด": "Alcohol Cleaning Spray",
-            "ไม้ถูพื้นไมโครไฟเบอร์แบบบิดล็อค": "Twist-Lock Microfiber Mop",
-            "ถังขยะฝาแกว่ง 40 ลิตร": "40 L Swing-Lid Trash Bin",
-            "น้ำยาเช็ดกระจกสูตรไร้คราบ": "Streak-Free Glass Cleaner",
-            "ถุงมือยางอนามัยป้องกันเคมี": "Chemical-Resistant Rubber Gloves",
-            "ฟองน้ำใยขัด Scotch-Brite": "Scotch-Brite Scouring Sponge",
-            "เครื่องคิดเลขตั้งโต๊ะ Casio 12 หลัก": "Casio 12-Digit Desktop Calculator",
-            "เครื่องเคลือบบัตรและเอกสาร A3": "A3 Document Laminator",
-            "เครื่องเจาะและเข้าเล่มกระดูกงู": "Comb Binding Machine",
-            "เครื่องนับธนบัตรอัตโนมัติ": "Automatic Banknote Counter",
-            "ปลั๊กไฟมาตรฐาน มอก. 5 ช่อง": "TIS-Certified 5-Outlet Power Strip",
-            "พัดลมตั้งโต๊ะประหยัดไฟเบอร์ 5": "No. 5 Energy-Efficient Desk Fan",
-            "เครื่องสแกนบาร์โค้ดความเร็วสูง": "High-Speed Barcode Scanner",
-            "กาต้มน้ำร้อนสเตนเลสสำหรับออฟฟิศ": "Stainless Steel Office Kettle",
-            "เครื่องตีเบอร์อัตโนมัติ MAX": "MAX Automatic Numbering Machine",
-            "เครื่องตัดนามบัตรไฟฟ้า": "Electric Business Card Cutter",
-            "เทปปิดกล่อง OPP ใส/น้ำตาล 2 นิ้ว": "2-Inch Clear/Brown OPP Packing Tape",
-            "ฟิล์มยืดพันพาเลท Stretch Film": "Pallet Stretch Film",
-            "พลาสติกกันกระแทก Air Bubble": "Air Bubble Wrap",
-            "สายรัดพลาสติก PP แบบม้วน": "PP Plastic Strapping Roll",
-            "เชือกฟางพลาสติกเกรด A": "Grade A Plastic Twine",
-            "กระสอบพลาสติกสานเกรดโรงงาน": "Industrial-Grade Woven Sacks",
-            "กล่องพัสดุไปรษณีย์เบอร์ 00 - เบอร์ 7": "Shipping Boxes, Sizes 00–7",
-            "ปืนยิงกาวร้อนแท่งไฟฟ้า": "Electric Hot Glue Gun",
-            "กระดาษกาวสองหน้าโฟม 3M": "3M Double-Sided Foam Tape",
-            "ถุงซิปล็อคขนาดมาตรฐาน": "Standard-Size Zip Bags"
         };
 
         const thaiOriginals = new Map();
@@ -1966,91 +1931,76 @@
             }
         }
 
-        // Sample 10 items for each of the 7 categories (Slide 3)
+        // Product examples are grouped by their matching image category.
         const categoryData = {
             1: [
-                { title: "ปากกาเจล Sarasa Clip", img: "img/product/cat1/1.png" },
-                { title: "ปากกาลูกลื่น Lancer Spiral", img: "img/product/cat1/n1.png" },
-                { title: "ชุดสีไม้คลีนเลอร์ 24 สี", img: "img/product/cat1/n2.png" },
-                { title: "ยางลบดินสอ Pentel Ain", img: "img/product/cat1/n3.png" },
-                { title: "ดินสอกด Rotring Tikky", img: "img/product/cat1/n4.png" },
-                { title: "ปากกาเคมี 2 หัว Horse", img: "img/product/cat1/3.png" },
-                { title: "ปากกาไวท์บอร์ด Pilot", img: "img/product/cat1/13.png" },
-                { title: "ชุดพู่กันสีน้ำสง่ามยุระ", img: "img/product/cat1/n5.png" },
-                { title: "เทปลบคำผิด PLUS Whiper", img: "img/product/cat1/1.png" },
-                { title: "ไฮไลท์ Stabilo Boss Pastel", img: "img/product/cat1/n1.png" }
+                { title: "ดินสอเขียนวัสดุ Mitsubishi 7600", en: "Mitsubishi 7600 Marking Pencils", img: "img/product/cat1/n1.png" },
+                { title: "ฉลากอเนกประสงค์ Elephant", en: "Elephant All-Purpose Labels", img: "img/product/cat1/n2.png" },
+                { title: "ตรายางหมึกในตัว Shiny", en: "Shiny Self-Inking Stamps", img: "img/product/cat1/n5.png" },
+                { title: "ปากกาเมจิกหลากสี", en: "Assorted Color Markers", img: "img/product/cat4/n1.png" },
+                { title: "หมึกเติมตรายางหลากสี", en: "Assorted Stamp Inks", img: "img/product/cat4/n4.png" }
             ],
             2: [
-                { title: "ที่เย็บกระดาษ MAX HD-10", img: "img/product/cat2/n1.png" },
-                { title: "กรรไกรตราช้าง 8 นิ้ว", img: "img/product/cat2/2.png" },
-                { title: "แท่นตัดเทปตราช้าง", img: "img/product/cat2/3.png" },
-                { title: "คัตเตอร์ Olfa Heavy Duty", img: "img/product/cat2/n2.png" },
-                { title: "ลวดเย็บกระดาษ MAX No.10", img: "img/product/cat2/5.png" },
-                { title: "คลิปหนีบกระดาษดำ Robin", img: "img/product/cat2/n3.png" },
-                { title: "กาวตราช้าง Elephant Stick", img: "img/product/cat2/7.png" },
-                { title: "ตรายางหมึกในตัว Shiny", img: "img/product/cat2/8.png" },
-                { title: "เครื่องเจาะกระดาษ 2 รู", img: "img/product/cat2/n1.png" },
-                { title: "ไม้บรรทัดเหล็ก 30 ซม.", img: "img/product/cat2/2.png" }
+                { title: "เครื่องทำลายเอกสาร", en: "Paper Shredder", img: "img/product/cat1/n3.png" },
+                { title: "เครื่องเคลือบบัตร", en: "Document Laminator", img: "img/product/cat1/n4.png" },
+                { title: "เครื่องบันทึกเวลาเข้า-ออก", en: "Time Clock Recorder", img: "img/product/cat3/5.png" },
+                { title: "เครื่องทำฉลากพกพา", en: "Portable Label Maker", img: "img/product/cat3/bro.png" }
             ],
             3: [
-                { title: "กระดาษ Double A 80 แกรม A4", img: "img/product/cat3/1.png" },
-                { title: "กระดาษ IDEA Work A4 80g", img: "img/product/cat3/2.png" },
-                { title: "กระดาษถ่ายเอกสารการ์ดสี", img: "img/product/cat3/bro.png" },
-                { title: "กระดาษต่อเนื่อง 9x11 นิ้ว", img: "img/product/cat3/n1.png" },
-                { title: "กระดาษโฟโต้กันน้ำมันวาว", img: "img/product/cat3/5.png" },
-                { title: "กระดาษคาร์บอนดำ Horse", img: "img/product/cat3/6.png" },
-                { title: "กระดาษสติกเกอร์ขาวด้าน", img: "img/product/cat3/n2.png" },
-                { title: "กระดาษความร้อนใบเสร็จ 80mm", img: "img/product/cat3/n3.png" },
-                { title: "กระดาษเขียนแบบ A3", img: "img/product/cat3/1.png" },
-                { title: "สมุดบันทึกริมลวดมีเส้น", img: "img/product/cat3/2.png" }
+                { title: "กระดาษถ่ายเอกสาร Double A", en: "Double A Copy Paper", img: "img/product/cat1/3.png" },
+                { title: "กระดาษต่อเนื่อง T.K.S.", en: "T.K.S. Continuous Paper", img: "img/product/cat1/13.png" },
+                { title: "กระดาษชำระม้วน Kimsoft", en: "Kimsoft Toilet Tissue", img: "img/product/cat2/n1.png" }
             ],
             4: [
-                { title: "แฟ้มตราช้าง 120A4 ก้านยก", img: "img/product/cat4/1.png" },
-                { title: "แฟ้มห่วง 2 ห่วง Robin", img: "img/product/cat4/2.png" },
-                { title: "แฟ้มซองพลาสติกใส A4", img: "img/product/cat4/n1.png" },
-                { title: "ไส้แฟ้มถนอมเอกสาร 11 รู", img: "img/product/cat4/n2.png" },
-                { title: "กล่องใส่เอกสารกระดาษลูกฟูก", img: "img/product/cat4/n3.png" },
-                { title: "แฟ้มแขวน ตราช้าง 924", img: "img/product/cat4/n4.png" },
-                { title: "แฟ้มคลิปสปริงสำหรับเสนองาน", img: "img/product/cat4/7.png" },
-                { title: "ตู้เอกสารพลาสติก 5 ชั้น", img: "img/product/cat4/8.png" },
-                { title: "กระเป๋าใส่เอกสารขยายข้าง", img: "img/product/cat4/1.png" },
-                { title: "คลิปบอร์ดไม้สำหรับตรวจงาน", img: "img/product/cat4/2.png" }
+                { title: "แฟ้มเอกสารก้านยกคละสี", en: "Assorted Lever Arch Files", img: "img/product/cat1/1.png" },
+                { title: "ตู้ลิ้นชักเก็บเอกสาร", en: "Document Drawer Organizer", img: "img/product/cat6/n1.png" },
+                { title: "ตู้เก็บเอกสารเหล็ก", en: "Metal Filing Cabinet", img: "img/product/cat6/n4.png" },
+                { title: "ตู้จดหมายสีแดง", en: "Red Mailbox", img: "img/product/cat6/red.png" }
             ],
             5: [
-                { title: "น้ำยาทำความสะอาดพื้น Magiclean", img: "img/product/cat5/1.png" },
-                { title: "สบู่เหลวล้างมือฆ่าเชื้อแบคทีเรีย", img: "img/product/cat5/2.png" },
-                { title: "กระดาษทิชชู่ม้วนจัมโบ้ JRT", img: "img/product/cat5/3.png" },
-                { title: "ถุงขยะดำเหนียวพิเศษ ขนาด 30x40", img: "img/product/cat5/4.png" },
-                { title: "สเปรย์แอลกอฮอล์ทำความสะอาด", img: "img/product/cat5/5.png" },
-                { title: "ไม้ถูพื้นไมโครไฟเบอร์แบบบิดล็อค", img: "img/product/cat5/6.png" },
-                { title: "ถังขยะฝาแกว่ง 40 ลิตร", img: "img/product/cat5/n1.png" },
-                { title: "น้ำยาเช็ดกระจกสูตรไร้คราบ", img: "img/product/cat5/8.png" },
-                { title: "ถุงมือยางอนามัยป้องกันเคมี", img: "img/product/cat5/1.png" },
-                { title: "ฟองน้ำใยขัด Scotch-Brite", img: "img/product/cat5/2.png" }
+                { title: "ถังขยะคัดแยกสี", en: "Color-Coded Sorting Bins", img: "img/product/cat2/2.png" },
+                { title: "ถุงขยะสีดำ", en: "Black Garbage Bags", img: "img/product/cat2/3.png" },
+                { title: "ไม้รีดน้ำพื้น", en: "Floor Squeegees", img: "img/product/cat2/5.png" },
+                { title: "ถุงมือยางทำความสะอาด", en: "Rubber Cleaning Gloves", img: "img/product/cat2/7.png" },
+                { title: "น้ำยาทำความสะอาดพื้น 3M", en: "3M Floor Cleaner", img: "img/product/cat2/8.png" },
+                { title: "ชุดม็อบถูพื้น", en: "Mop Set", img: "img/product/cat2/n2.png" },
+                { title: "ไม้กวาด", en: "Brooms", img: "img/product/cat2/n3.png" },
+                { title: "ถุงมือผ้าทำงาน", en: "Work Gloves", img: "img/product/cat4/n2.png" }
             ],
             6: [
-                { title: "เครื่องคิดเลขตั้งโต๊ะ Casio 12 หลัก", img: "img/product/cat6/1.png" },
-                { title: "เครื่องเคลือบบัตรและเอกสาร A3", img: "img/product/cat6/n1.png" },
-                { title: "เครื่องเจาะและเข้าเล่มกระดูกงู", img: "img/product/cat6/n2.png" },
-                { title: "เครื่องนับธนบัตรอัตโนมัติ", img: "img/product/cat6/n3.png" },
-                { title: "ปลั๊กไฟมาตรฐาน มอก. 5 ช่อง", img: "img/product/cat6/5.png" },
-                { title: "พัดลมตั้งโต๊ะประหยัดไฟเบอร์ 5", img: "img/product/cat6/red.png" },
-                { title: "เครื่องสแกนบาร์โค้ดความเร็วสูง", img: "img/product/cat6/7.png" },
-                { title: "กาต้มน้ำร้อนสเตนเลสสำหรับออฟฟิศ", img: "img/product/cat6/n4.png" },
-                { title: "เครื่องตีเบอร์อัตโนมัติ MAX", img: "img/product/cat6/1.png" },
-                { title: "เครื่องตัดนามบัตรไฟฟ้า", img: "img/product/cat6/n1.png" }
+                { title: "เครื่องพิมพ์อิงค์เจ็ต", en: "Inkjet Printer", img: "img/product/cat3/1.png" },
+                { title: "หมึกพิมพ์ Epson 664", en: "Epson 664 Ink Bottles", img: "img/product/cat3/2.png" },
+                { title: "เครื่องพิมพ์ฉลากบาร์โค้ด", en: "Barcode Label Printer", img: "img/product/cat3/6.png" },
+                { title: "ถ่าน Panasonic", en: "Panasonic Batteries", img: "img/product/cat3/n1.png" },
+                { title: "ปลั๊กพ่วงพร้อมสวิตช์", en: "Switched Power Strip", img: "img/product/cat3/n2.png" },
+                { title: "สาย LAN Ethernet", en: "Ethernet LAN Cable", img: "img/product/cat3/n3.png" },
+                { title: "ตู้นิรภัยดิจิทัล", en: "Digital Safe", img: "img/product/cat6/1.png" }
             ],
             7: [
-                { title: "เทปปิดกล่อง OPP ใส/น้ำตาล 2 นิ้ว", img: "img/product/cat7/1.png" },
-                { title: "ฟิล์มยืดพันพาเลท Stretch Film", img: "img/product/cat7/2.png" },
-                { title: "พลาสติกกันกระแทก Air Bubble", img: "img/product/cat7/3.png" },
-                { title: "สายรัดพลาสติก PP แบบม้วน", img: "img/product/cat7/4.png" },
-                { title: "เชือกฟางพลาสติกเกรด A", img: "img/product/cat7/thong.png" },
-                { title: "กระสอบพลาสติกสานเกรดโรงงาน", img: "img/product/cat7/6.png" },
-                { title: "กล่องพัสดุไปรษณีย์เบอร์ 00 - เบอร์ 7", img: "img/product/cat7/7.png" },
-                { title: "ปืนยิงกาวร้อนแท่งไฟฟ้า", img: "img/product/cat7/8.png" },
-                { title: "กระดาษกาวสองหน้าโฟม 3M", img: "img/product/cat7/1.png" },
-                { title: "ถุงซิปล็อคขนาดมาตรฐาน", img: "img/product/cat7/2.png" }
+                { title: "ฟิล์มยืดพันพาเลท", en: "Pallet Stretch Film", img: "img/product/cat4/1.png" },
+                { title: "รถเข็นพื้นเรียบ", en: "Platform Hand Truck", img: "img/product/cat4/2.png" },
+                { title: "กรวยจราจร", en: "Traffic Cones", img: "img/product/cat4/7.png" },
+                { title: "กระสอบบรรจุสินค้า", en: "Product Sacks", img: "img/product/cat4/8.png" },
+                { title: "เทปกาวหลากชนิด", en: "Assorted Adhesive Tapes", img: "img/product/cat4/n3.png" },
+                { title: "น้ำดื่มบรรจุขวด", en: "Bottled Drinking Water", img: "img/product/cat5/2.png" },
+                { title: "ชุดช้อนส้อมสเตนเลส Zebra", en: "Zebra Stainless Steel Cutlery Set", img: "img/product/cat5/3.png" },
+                { title: "หม้อหุงข้าวไฟฟ้า", en: "Electric Rice Cookers", img: "img/product/cat5/4.png" },
+                { title: "สินค้าบรรจุกระป๋องคละชนิด", en: "Assorted Canned Goods", img: "img/product/cat5/5.png" },
+                { title: "กรวยอเนกประสงค์", en: "Utility Funnels", img: "img/product/cat5/6.png" },
+                { title: "น้ำตาลทรายบรรจุถุง", en: "Bagged Refined Sugar", img: "img/product/cat5/8.png" },
+                { title: "ถุงบรรจุภัณฑ์หลากสี", en: "Assorted Packaging Bags", img: "img/product/cat5/n1.png" },
+                { title: "เก้าอี้สำนักงาน", en: "Office Chair", img: "img/product/cat6/5.png" },
+                { title: "โต๊ะพับอเนกประสงค์", en: "Folding Utility Table", img: "img/product/cat6/7.png" },
+                { title: "โต๊ะทำงานพร้อมลิ้นชัก", en: "Office Desk with Drawers", img: "img/product/cat6/n2.png" },
+                { title: "กระดานไวท์บอร์ดพร้อมขาตั้ง", en: "Mobile Whiteboard", img: "img/product/cat6/n3.png" },
+                { title: "ลูกฟุตบอล", en: "Soccer Ball", img: "img/product/cat7/1.png" },
+                { title: "ลูกตะกร้อ", en: "Sepak Takraw Balls", img: "img/product/cat7/2.png" },
+                { title: "ลูกบาสเกตบอล Spalding", en: "Spalding Basketball", img: "img/product/cat7/3.png" },
+                { title: "ชุดตาข่ายกีฬา", en: "Sports Net Set", img: "img/product/cat7/4.png" },
+                { title: "ถุงบรรจุผลิตภัณฑ์", en: "Product Bag", img: "img/product/cat7/6.png" },
+                { title: "โต๊ะปิงปอง", en: "Table Tennis Table", img: "img/product/cat7/7.png" },
+                { title: "ชุดไม้แบดมินตันและลูกขนไก่", en: "Badminton Racket and Shuttlecock Set", img: "img/product/cat7/8.png" },
+                { title: "ธงชาติและธงประดับ", en: "National and Decorative Flags", img: "img/product/cat7/thong.png" }
             ]
         };
 
@@ -2060,12 +2010,10 @@
             const container = document.getElementById('product-items-display');
             let html = '';
             list.forEach(item => {
-                const title = currentLanguage === 'en'
-                    ? (productTitlesEnglish[item.title] || item.title)
-                    : item.title;
+                const title = currentLanguage === 'en' ? item.en : item.title;
                 html += `
                     <div class="product-item-card">
-                        <img src="${item.img}" alt="${title}" onerror="this.src='img/product/cat1/1.png'">
+                        <img src="${item.img}" alt="${title}">
                         <div class="product-badge">${title}</div>
                     </div>
                 `;
